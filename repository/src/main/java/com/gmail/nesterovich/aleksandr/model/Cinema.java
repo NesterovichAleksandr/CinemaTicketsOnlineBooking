@@ -47,7 +47,7 @@ public class Cinema implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Cinema)) return false;
         Cinema cinema = (Cinema) o;
         return Objects.equals(id, cinema.id) &&
                 Objects.equals(name, cinema.name) &&
