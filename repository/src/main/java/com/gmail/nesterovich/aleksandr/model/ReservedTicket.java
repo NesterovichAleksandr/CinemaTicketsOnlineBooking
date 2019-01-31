@@ -5,10 +5,11 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class ReservedTicket {
+public class ReservedTicket implements Serializable {
 
     private static final long serialVersionUID = 6598806665044633298L;
 
