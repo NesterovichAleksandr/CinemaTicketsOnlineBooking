@@ -14,8 +14,8 @@ public class Cinema implements Serializable {
     private Long id;
     @Column
     private String name;
-    @Column
-    private String address;
+    @OneToOne
+    private Address address;
 
     public Cinema() {
     }
@@ -36,11 +36,11 @@ public class Cinema implements Serializable {
         this.name = name;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
