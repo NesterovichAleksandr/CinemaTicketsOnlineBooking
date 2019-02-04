@@ -22,8 +22,9 @@ public class Film implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Genre> genres;
-    @Column
-    private String country;
+    @OneToMany(cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Country country;
     @Column
     private Short duration;
     @Column
@@ -56,11 +57,11 @@ public class Film implements Serializable {
         this.genres = genres;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 
