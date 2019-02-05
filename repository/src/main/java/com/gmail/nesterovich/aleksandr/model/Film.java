@@ -24,7 +24,7 @@ public class Film implements Serializable {
     private Set<Genre> genres;
     @OneToMany(cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Country country;
+    private Set<Country> countries;
     @Column
     private Short duration;
     @Column
@@ -57,12 +57,12 @@ public class Film implements Serializable {
         this.genres = genres;
     }
 
-    public Country getCountry() {
-        return country;
+    public Set<Country> getCountries() {
+        return countries;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setCountries(Set<Country> countries) {
+        this.countries = countries;
     }
 
     public Short getDuration() {
@@ -89,13 +89,13 @@ public class Film implements Serializable {
         return Objects.equals(id, film.id) &&
                 Objects.equals(name, film.name) &&
                 Objects.equals(genres, film.genres) &&
-                Objects.equals(country, film.country) &&
+                Objects.equals(countries, film.countries) &&
                 Objects.equals(duration, film.duration) &&
                 Objects.equals(yeaOfIssue, film.yeaOfIssue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, genres, country, duration, yeaOfIssue);
+        return Objects.hash(id, name, genres, countries, duration, yeaOfIssue);
     }
 }
