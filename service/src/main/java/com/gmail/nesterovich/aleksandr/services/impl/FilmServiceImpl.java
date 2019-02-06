@@ -1,13 +1,16 @@
 package com.gmail.nesterovich.aleksandr.services.impl;
 
 import com.gmail.nesterovich.aleksandr.dao.FilmDao;
+import com.gmail.nesterovich.aleksandr.model.Film;
+import com.gmail.nesterovich.aleksandr.dto.FilmDto;
 import com.gmail.nesterovich.aleksandr.services.FilmService;
+import com.gmail.nesterovich.aleksandr.utils.convector.FilmConvector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class FilmServiceImpl<Film, String> implements FilmService<Film, String> {
+public class FilmServiceImpl implements FilmService {
 
     FilmDao filmDao;
 
@@ -18,7 +21,8 @@ public class FilmServiceImpl<Film, String> implements FilmService<Film, String> 
 
     @Override
     @Transactional
-    public void save(Film entity) {
-        filmDao.save((com.gmail.nesterovich.aleksandr.model.Film) entity);
+    public void save(FilmDto filmDto) {
+        Film film = FilmConvector.convert(filmDto);
+        filmDao.save(film);
     }
 }

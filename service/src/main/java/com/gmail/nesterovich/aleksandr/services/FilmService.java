@@ -1,6 +1,8 @@
 package com.gmail.nesterovich.aleksandr.services;
 
-public interface FilmService<Film, String> {
+import com.gmail.nesterovich.aleksandr.dto.FilmDto;
 
-    void save(Film entity);
+public interface FilmService {
+
+    void save(FilmDto filmDto);
 }
