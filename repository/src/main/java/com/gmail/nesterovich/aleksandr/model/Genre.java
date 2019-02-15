@@ -37,7 +37,7 @@ public class Genre implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Genre)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Genre genre1 = (Genre) o;
         return Objects.equals(id, genre1.id) &&
                 Objects.equals(genre, genre1.genre);

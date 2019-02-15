@@ -52,11 +52,11 @@ public class ReservedTicket implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ReservedTicket)) return false;
-        ReservedTicket reservedTicket = (ReservedTicket) o;
-        return Objects.equals(id, reservedTicket.id) &&
-                Objects.equals(code, reservedTicket.code) &&
-                Objects.equals(cost, reservedTicket.cost);
+        if (o == null || getClass() != o.getClass()) return false;
+        ReservedTicket that = (ReservedTicket) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(code, that.code) &&
+                Objects.equals(cost, that.cost);
     }
 
     @Override

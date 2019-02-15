@@ -54,7 +54,7 @@ public class Seance implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Seance)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Seance seance = (Seance) o;
         return Objects.equals(id, seance.id) &&
                 Objects.equals(date, seance.date) &&

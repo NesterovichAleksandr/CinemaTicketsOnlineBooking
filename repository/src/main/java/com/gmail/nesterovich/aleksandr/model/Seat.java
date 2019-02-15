@@ -52,7 +52,7 @@ public class Seat implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Seat)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Seat seat = (Seat) o;
         return Objects.equals(id, seat.id) &&
                 Objects.equals(row, seat.row) &&
