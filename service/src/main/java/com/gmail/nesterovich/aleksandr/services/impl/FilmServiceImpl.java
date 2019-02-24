@@ -2,7 +2,7 @@ package com.gmail.nesterovich.aleksandr.services.impl;
 
 import com.gmail.nesterovich.aleksandr.dao.FilmDao;
 import com.gmail.nesterovich.aleksandr.model.Film;
-import com.gmail.nesterovich.aleksandr.dto.FilmDto;
+import com.gmail.nesterovich.aleksandr.model.FilmDto;
 import com.gmail.nesterovich.aleksandr.services.FilmService;
 import com.gmail.nesterovich.aleksandr.utils.convector.FilmConvector;
 import org.springframework.beans.factory.annotation.Autowired;
