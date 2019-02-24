@@ -13,6 +13,15 @@
     <artifactId>repository</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>repository</name>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+            <!--<version>5.1.47</version>-->
+        <!--</dependency>-->
+    </dependencies>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
