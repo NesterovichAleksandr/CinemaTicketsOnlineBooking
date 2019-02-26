@@ -1,4 +1,4 @@
-package com.gmail.nesterovich.aleksandr.dto;
+package com.gmail.nesterovich.aleksandr.model;
 
 public class FilmDto {
 

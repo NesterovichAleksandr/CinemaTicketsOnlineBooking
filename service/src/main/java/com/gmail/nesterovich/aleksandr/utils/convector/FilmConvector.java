@@ -1,7 +1,7 @@
 package com.gmail.nesterovich.aleksandr.utils.convector;
 
 import com.gmail.nesterovich.aleksandr.model.Film;
-import com.gmail.nesterovich.aleksandr.dto.FilmDto;
+import com.gmail.nesterovich.aleksandr.model.FilmDto;
 
 public class FilmConvector {
 
