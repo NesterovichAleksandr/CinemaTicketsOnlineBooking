@@ -12,9 +12,23 @@ public class FilmConvector {
         Film film = new Film();
         film.setId(filmDto.getId());
         film.setName(filmDto.getName());
+        film.setGenre(filmDto.getGenre());
+        film.setCountry(filmDto.getCountry());
         film.setDuration(filmDto.getDuration());
-        film.setYeaOfIssue(filmDto.getYeaOfIssue());
+        film.setYearOfIssue(filmDto.getYearOfIssue());
 
         return film;
+    }
+
+    public static FilmDto convert(Film film){
+        FilmDto filmDto = new FilmDto();
+        filmDto.setId(film.getId());
+        filmDto.setName(film.getName());
+        filmDto.setGenre(film.getGenre());
+        filmDto.setCountry(film.getCountry());
+        filmDto.setDuration(film.getDuration());
+        filmDto.setYearOfIssue(film.getYearOfIssue());
+
+        return filmDto;
     }
 }

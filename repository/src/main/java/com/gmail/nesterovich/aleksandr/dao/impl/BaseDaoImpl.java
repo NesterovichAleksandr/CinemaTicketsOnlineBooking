@@ -3,20 +3,18 @@ package com.gmail.nesterovich.aleksandr.dao.impl;
 import com.gmail.nesterovich.aleksandr.dao.BaseDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.util.List;
 
-//@Repository
-//@Transactional
 public class BaseDaoImpl<T extends Serializable, ID extends Serializable> implements BaseDao<T, ID> {
 
-    //@Autowired
+    @Autowired
     private SessionFactory sessionFactory;
 
     private Class<T> entityClass;
 
-    //@Autowired
     BaseDaoImpl(Class<T> entityClass) {
         this.entityClass = entityClass;
     }

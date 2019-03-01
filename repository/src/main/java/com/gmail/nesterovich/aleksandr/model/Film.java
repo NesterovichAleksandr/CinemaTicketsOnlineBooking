@@ -26,7 +26,7 @@ public class Film implements Serializable {
     @Column
     private Short duration;
     @Column
-    private Short yeaOfIssue;
+    private Short yearOfIssue;
 
     public Film() {
     }
@@ -71,12 +71,12 @@ public class Film implements Serializable {
         this.duration = duration;
     }
 
-    public Short getYeaOfIssue() {
-        return yeaOfIssue;
+    public Short getYearOfIssue() {
+        return yearOfIssue;
     }
 
-    public void setYeaOfIssue(Short yeaOfIssue) {
-        this.yeaOfIssue = yeaOfIssue;
+    public void setYearOfIssue(Short yearOfIssue) {
+        this.yearOfIssue = yearOfIssue;
     }
 
     @Override
@@ -89,11 +89,11 @@ public class Film implements Serializable {
                 Objects.equals(genre, film.genre) &&
                 Objects.equals(country, film.country) &&
                 Objects.equals(duration, film.duration) &&
-                Objects.equals(yeaOfIssue, film.yeaOfIssue);
+                Objects.equals(yearOfIssue, film.yearOfIssue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, genre, country, duration, yeaOfIssue);
+        return Objects.hash(id, name, genre, country, duration, yearOfIssue);
     }
 }

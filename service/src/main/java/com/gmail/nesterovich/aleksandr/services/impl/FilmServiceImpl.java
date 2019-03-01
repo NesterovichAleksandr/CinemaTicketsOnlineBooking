@@ -9,20 +9,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class FilmServiceImpl implements FilmService {
 
-    FilmDao filmDao;
-
     @Autowired
-    public FilmServiceImpl(FilmDao filmDao) {
-        this.filmDao = filmDao;
-    }
+    FilmDao filmDao;
 
     @Override
     @Transactional
     public void save(FilmDto filmDto) {
         Film film = FilmConvector.convert(filmDto);
         filmDao.save(film);
+    }
+
+    @Override
+    @Transactional
+    public List<FilmDto> findAll() {
+        List<Film> films = filmDao.findAll();
+        List<FilmDto> filmsDto = new ArrayList<>();
+        for (Film film : films) {
+            filmsDto.add(FilmConvector.convert(film));
+        }
+        return filmsDto;
     }
 }
