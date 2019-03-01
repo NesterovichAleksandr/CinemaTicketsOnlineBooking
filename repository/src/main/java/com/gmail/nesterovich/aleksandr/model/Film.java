@@ -1,13 +1,13 @@
 package com.gmail.nesterovich.aleksandr.model;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 public class Film implements Serializable {
@@ -19,16 +19,14 @@ public class Film implements Serializable {
     private String id;
     @Column
     private String name;
-    @OneToMany(cascade = CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Genre> genres;
-    @OneToMany(cascade = CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Country> countries;
+    @Column
+    private String genre;
+    @Column
+    private String country;
     @Column
     private Short duration;
     @Column
-    private Short yeaOfIssue;
+    private Short yearOfIssue;
 
     public Film() {
     }
@@ -49,20 +47,20 @@ public class Film implements Serializable {
         this.name = name;
     }
 
-    public Set<Genre> getGenres() {
-        return genres;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenres(Set<Genre> genres) {
-        this.genres = genres;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public Set<Country> getCountries() {
-        return countries;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCountries(Set<Country> countries) {
-        this.countries = countries;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public Short getDuration() {
@@ -73,12 +71,12 @@ public class Film implements Serializable {
         this.duration = duration;
     }
 
-    public Short getYeaOfIssue() {
-        return yeaOfIssue;
+    public Short getYearOfIssue() {
+        return yearOfIssue;
     }
 
-    public void setYeaOfIssue(Short yeaOfIssue) {
-        this.yeaOfIssue = yeaOfIssue;
+    public void setYearOfIssue(Short yearOfIssue) {
+        this.yearOfIssue = yearOfIssue;
     }
 
     @Override
@@ -88,14 +86,14 @@ public class Film implements Serializable {
         Film film = (Film) o;
         return Objects.equals(id, film.id) &&
                 Objects.equals(name, film.name) &&
-                Objects.equals(genres, film.genres) &&
-                Objects.equals(countries, film.countries) &&
+                Objects.equals(genre, film.genre) &&
+                Objects.equals(country, film.country) &&
                 Objects.equals(duration, film.duration) &&
-                Objects.equals(yeaOfIssue, film.yeaOfIssue);
+                Objects.equals(yearOfIssue, film.yearOfIssue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, genres, countries, duration, yeaOfIssue);
+        return Objects.hash(id, name, genre, country, duration, yearOfIssue);
     }
 }

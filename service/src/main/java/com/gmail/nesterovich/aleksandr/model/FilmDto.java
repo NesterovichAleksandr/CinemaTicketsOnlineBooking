@@ -4,8 +4,10 @@ public class FilmDto {
 
     private String id;
     private String name;
+    private String genre;
+    private String country;
     private Short duration;
-    private Short yeaOfIssue;
+    private Short yearOfIssue;
 
     public FilmDto() {
     }
@@ -26,6 +28,22 @@ public class FilmDto {
         this.name = name;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     public Short getDuration() {
         return duration;
     }
@@ -34,11 +52,11 @@ public class FilmDto {
         this.duration = duration;
     }
 
-    public Short getYeaOfIssue() {
-        return yeaOfIssue;
+    public Short getYearOfIssue() {
+        return yearOfIssue;
     }
 
-    public void setYeaOfIssue(Short yeaOfIssue) {
-        this.yeaOfIssue = yeaOfIssue;
+    public void setYearOfIssue(Short yearOfIssue) {
+        this.yearOfIssue = yearOfIssue;
     }
 }
